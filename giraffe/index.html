@@ -7,6 +7,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			var gr4Static = $('#gr4').val();
+
 			setCharts();
 
 		    $('#submit').click(function() {
@@ -30,7 +32,13 @@
 		    	}
 
 		    	if (gr4 > 30) {
-		    		alert("You sure? Maybe we should kill 'em all?!");
+		    		if (confirm("You sure? Maybe we should kill 'em all?!") == true) {
+		    			gr4Static = gr4;
+		    		}
+		    		else {
+		    			gr4 = gr4Static;
+		    			$('#gr4').val(gr4);
+		    		}
 		    	}
 
 
@@ -77,7 +85,7 @@ Zombie apocalypse!: <input type="text" size="3" name="ipsum" value="33" id="gr3"
 </tr>
 <tr>
 <td>
-mmm, ice-cream!! i'll let you all live for another day...: <input type="text" size="3" name="ipsum" value="13" id="gr4" /> %
+mmm, ice-cream!! i'll let you all live for another day...: <input type="text" size="3" name="ipsum" value="25" id="gr4" /> %
 </td>
 </tr>
 <tr>
