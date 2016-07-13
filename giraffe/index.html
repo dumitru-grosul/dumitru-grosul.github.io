@@ -1,97 +1,99 @@
 <html>
 <head>
-	<title>Jiraf</title>
-	<style>
+    <title>Jiraf</title>
+    <style>
 
-	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var gr4Static = $('#gr4').val();
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var gr4Static = $('#gr4').val();
 
-			setCharts();
+            setCharts();
 
-		    $('#submit').click(function() {
-		    	return setCharts();
-		    });
+            $('#submit').click(function() {
+                return setCharts();
+            });
 
-		    function setCharts() {
-		    	var gr1 = $('#gr1').val();
-		    	var gr2 = $('#gr2').val();
-		    	var gr3 = $('#gr3').val();
-		    	var gr4 = $('#gr4').val();
+            function setCharts() {
+                var gr1 = $('#gr1').val();
+                var gr2 = $('#gr2').val();
+                var gr3 = $('#gr3').val();
+                var gr4 = $('#gr4').val();
 
-		    	if (isNaN(gr1) || isNaN(gr2) || isNaN(gr3)) {
-		    		alert('Use numbers!');
-		    		return false;
-		    	}
+                if (isNaN(gr1) || isNaN(gr2) || isNaN(gr3)) {
+                    alert('Use numbers!');
+                    return false;
+                }
 
-		    	if (gr1 < 0 || gr1 > 100 || gr2 < 0 || gr2 > 100 || gr3 < 0 || gr3 > 100) {
-		    		alert('Use numbers from 0 to 100!');
-		    		return false;
-		    	}
+                if (gr1 < 0 || gr1 > 100 || gr2 < 0 || gr2 > 100 || gr3 < 0 || gr3 > 100) {
+                    alert('Use numbers from 0 to 100!');
+                    return false;
+                }
 
-		    	if (gr4 > 30) {
-		    		if (confirm("You sure? Maybe we should kill 'em all?!") == true) {
-		    			gr4Static = gr4;
-		    		}
-		    		else {
-		    			gr4 = gr4Static;
-		    			$('#gr4').val(gr4);
-		    		}
-		    	}
+                if (gr4 > 30) {
+                    if (confirm("You sure? Maybe we should kill 'em all?!") == true) {
+                        gr4Static = gr4;
+                    }
+                    else {
+                        gr4 = gr4Static;
+                        $('#gr4').val(gr4);
+                    }
+                }
 
 
-		    	$('#img1').css({'top': (100 - gr1) * 3 + 40});
-		    	$('#img2').css({'top': (100 - gr2) * 3 + 40});
-		    	$('#img3').css({'top': (100 - gr3) * 3 + 40});
-		    	$('#img4').css({'top': (100 - gr4) * 3 + 40});
+                $('#img1').css({'top': (100 - gr1) * 3 + 40});
+                $('#img2').css({'top': (100 - gr2) * 3 + 40});
+                $('#img3').css({'top': (100 - gr3) * 3 + 40});
+                $('#img4').css({'top': (100 - gr4) * 3 + 40});
 
-		    	return false;
-		    }
-		});
-	</script>
+                return false;
+            }
+        });
+    </script>
 </head>
 <table>
-<tr>
-<td colspan="2">
-Lena's thoughts in the morning:
-<br/>
-(Use numbers from 0 to 100 and click Submit)
-</td>
-<tr>
-<td>
-Kill the sun: <input type="text" size="3" name="herp" value="60" id="gr1" /> %
-</td>
-<td rowspan="5">
-<div style="background-image: url('graph.jpg'); style:block; width:500px; height:360px; position:relative; overflow: hidden;">
-	<img id="img1" style="position:absolute; left:60px; top:40px;" src="g.jpg" />
-	<img id="img2" style="position:absolute; left:150px; top:40px;" src="g.jpg" />
-	<img id="img3" style="position:absolute; left:240px; top:40px;" src="g.jpg" />
-	<img id="img4" style="position:absolute; left:330px; top:40px;" src="g.jpg" />
+    <tr>
+        <td>
+            Lena's thoughts in the morning:
+            <br/>
+            (Use numbers from 0 to 100 and click Submit)
+        </td>
+    <tr>
+        <td>
+            - Kill the sun: <input type="text" size="3" name="herp" value="60" id="gr1" /> %
+        </td>
+    </tr>
+    <tr>
+        <td>
+            - Erase humanity with napalm: <input type="text" size="3" name="derp" value="20" id="gr2" /> %
+        </td>
+    </tr>
+    <tr>
+        <td>
+            - Zombie apocalypse!: <input type="text" size="3" name="ipsum" value="33" id="gr3" /> %
+        </td>
+    </tr>
+    <tr>
+        <td>
+            - mmm, ice-cream!! i'll let you all live for another day...: <input type="text" size="3" name="ipsum" value="25" id="gr4" /> %
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Submit" id="submit" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="background-image: url('graph.jpg'); style:block; width:500px; height:360px; position:relative; overflow: hidden;">
+                <img id="img1" style="position:absolute; left:60px; top:40px;" src="g.jpg" />
+                <img id="img2" style="position:absolute; left:150px; top:40px;" src="g.jpg" />
+                <img id="img3" style="position:absolute; left:240px; top:40px;" src="g.jpg" />
+                <img id="img4" style="position:absolute; left:330px; top:40px;" src="g.jpg" />
 
-</div>
-</td>
-</tr>
-<tr>
-<td>
-Erase humanity with napalm: <input type="text" size="3" name="derp" value="20" id="gr2" /> %
-</td>
-</tr>
-<tr>
-<td>
-Zombie apocalypse!: <input type="text" size="3" name="ipsum" value="33" id="gr3" /> %
-</td>
-</tr>
-<tr>
-<td>
-mmm, ice-cream!! i'll let you all live for another day...: <input type="text" size="3" name="ipsum" value="25" id="gr4" /> %
-</td>
-</tr>
-<tr>
-<td>
-<input type="submit" value="Submit" id="submit" />
-</td>
-</tr>
+            </div>
+        </td>
+    </tr>
 </table>
 </html>
